@@ -23,8 +23,11 @@ The vector **z** (4,3) in the above figure has a direction relative to 0,0. With
  $$||\vec{z}|| = \sqrt{\vec{x}^2+\vec{y}^2}$$
 > [!example]-
  $||\vec{z}|| = \sqrt{4^2+3^2}$
+ >
  $||\vec{z}|| = \sqrt{25}$
+ >
  $||\vec{z}|| = 5$
+ 
 
 ### Normalized Vector
 A Normalized vector is a vector with the same direction but a magnitude of 1. It is calculated as:
