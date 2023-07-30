@@ -22,8 +22,8 @@ beginAtZero: true
 The vector **z** (4,3) in the above figure has a direction relative to 0,0. With a magnitude defined by the length. Magnitude can be calculated as:
  $$||\vec{z}|| = \sqrt{\vec{x}^2+\vec{y}^2}$$
 > [!example]-
-> $||\vec{z}|| = \sqrt{4^2+3^2}$
-> $||\vec{z}|| = \sqrt{25}$
+> $||\vec{z}|| = \sqrt{4^2+3^2}$<br>
+> $||\vec{z}|| = \sqrt{25}$<br>
 > $||\vec{z}|| = 5$
  
 
