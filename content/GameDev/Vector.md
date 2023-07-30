@@ -2,6 +2,7 @@
 tags:
 - math
 - physics
+title: "Vector"
 ---
 # Vector
 A vector has [[magnitude]] and direction. In a 2D plane, this can be represented by a coordinate points. Mathematic notation uses bold to indicate a **vector** and vertical bars to represent ||**magnitude**|| of a vector.
@@ -22,9 +23,11 @@ beginAtZero: true
 The vector **z** (4,3) in the above figure has a direction relative to 0,0. With a magnitude defined by the length. Magnitude can be calculated as:
  $$||\vec{z}|| = \sqrt{\vec{x}^2+\vec{y}^2}$$
 > [!example]-
-> $||\vec{z}|| = \sqrt{4^2+3^2}$<br>
-> $||\vec{z}|| = \sqrt{25}$<br>
-> $||\vec{z}|| = 5$
+> $$
+\begin{aligned}
+||\vec{z}|| &= \sqrt{4^2+3^2} \\ &= \sqrt{25} \\ &= 5
+\end{aligned}
+$$
  
 
 ### Normalized Vector
@@ -55,7 +58,7 @@ $\vec{c} = (2-6,5-7)$
 $\vec{c} = (-4,-2)$
 
 ## Scaling
-Scaling a vector can be achieved by multiplying the vector with a [[Scalar]].
+Scaling a vector can be achieved by multiplying the vector with a [[GameDev/Scalar|Scalar]].
 $$(x_1,y_1)*||\vec{z}|| = (x_1*||\vec{z}||, y_1*||\vec{z}||)$$
 >[!example]-
 >Assume scalar $||\vec{z}|| = 3$

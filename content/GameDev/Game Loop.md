@@ -3,7 +3,7 @@ tags:
 - gamedev
 ---
 # Game Loop
-The Game Loop defines the invidual steps a [[Game Engine|game engine]] executes in order to produce a working game.
+The Game Loop defines the individual steps a [[Game Engine|game engine]] executes in order to produce a working game.
 
 There are three main steps that repeat as the game runs.
 
