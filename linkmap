@@ -1,9 +1,11 @@
-/GameDev/Frame/index.{html} /GameDev/Frame/
-/GameDev/Game-Ideas/index.{html} /GameDev/Game-Ideas/
+/GameDev/Game-Loop/index.{html} /GameDev/Game-Loop/
 /GameDev/Game-Physics/index.{html} /GameDev/Game-Physics/
 /GameDev/Kinematics/index.{html} /GameDev/Kinematics/
-/GameDev/Vector/index.{html} /GameDev/Vector/
-/GameDev/Game-Engine/index.{html} /GameDev/Game-Engine/
-/GameDev/Game-Loop/index.{html} /GameDev/Game-Loop/
-/GameDev/Scalar/index.{html} /GameDev/Scalar/
+/GameDev/magnitude/index.{html} /GameDev/magnitude/
 /index.html /
+/GameDev/2D-Space/index.{html} /GameDev/2D-Space/
+/GameDev/FPS/index.{html} /GameDev/FPS/
+/GameDev/Frame/index.{html} /GameDev/Frame/
+/GameDev/Game-Engine/index.{html} /GameDev/Game-Engine/
+/GameDev/Scalar/index.{html} /GameDev/Scalar/
+/GameDev/Vector/index.{html} /GameDev/Vector/
