@@ -1,4 +1,5 @@
 ---
+title: "Game Physics"
 tags:
 - gamedev
 - physics
@@ -13,10 +14,10 @@ The change of speed over a given time.
 >Acceleration = Δ Speed / Δ Time
 
 ### Velocity
-The speed of an object in a given direction. Denoted as a [[Vector]]. Implementation of velocity in game [[Kinematics]] largely depends on the chosen [[Game Loop]].
+The speed of an object in a given direction. Denoted as a [[GameDev/Vector|Vector]]. Implementation of velocity in game [[GameDev/Kinematics|Kinematics]] largely depends on the chosen [[GameDev/Game Loop|Game Loop]].
 
-#### [[Game Loop#Fixed Time-step|Fixed Time-step]]
-Take the current position of an object and apply a vector to change that position on every [[Frame]].
+#### [[GameDev/Game Loop#Fixed Time-step|Fixed Time-step]]
+Take the current position of an object and apply a vector to change that position on every [[GameDev/Frame|Frame]].
 
-#### [[Game Loop#Variable Time-step|Variable Time-step]]
+#### [[GameDev/Game Loop#Variable Time-step|Variable Time-step]]
 Take the current position of an object and apply a vector to change that position. Multiply by vector time.
