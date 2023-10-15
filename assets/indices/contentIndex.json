@@ -1,0 +1,198 @@
+{
+  "/": {
+    "title": "Codex Omnia",
+    "content": "\n\u003e The only true wisdom is in knowing you know nothing\n\nI don't know everything; I only know what I know. This is my digital garden. A mind palace where the knowledge I find valuable resides. This garden is still in its infancy. Many pages are not fleshed out and may lead to dead ends. While still a budding sprout, I hope it like my mind continues to grow as I tend to it.\n\nLike many gardens, it's best to explore at your own pace following your own path. The graph below represents ideas, thoughts, and their connections to one another. Click a node to be taken to the entry.\n\nAlternatively, the following tags can be used to jump to a specific topic.\n- [Game Development](/tags/gamedev)\n- [Math](/tags/math)\n",
+    "lastmodified": "2023-08-06T01:25:45.145608144Z",
+    "tags": []
+  },
+  "/GameDev/2D-Space": {
+    "title": "2D Space",
+    "content": "",
+    "lastmodified": "2023-08-06T01:14:15.304554058Z",
+    "tags": [
+      "physics"
+    ]
+  },
+  "/GameDev/FPS": {
+    "title": "FPS",
+    "content": "",
+    "lastmodified": "2023-08-06T01:14:15.304554058Z",
+    "tags": [
+      "computing",
+      "gamedev"
+    ]
+  },
+  "/GameDev/Frame": {
+    "title": "Frame",
+    "content": "In the context of computing, a frame is a single image displayed by a monitor. By displaying a series of frames in rapid succession, the illusion of a motion can be conveyed on a monitor. The measure of frames is usually counted in seconds as frames per second, or [[GameDev/FPS|FPS]].\n",
+    "lastmodified": "2023-08-06T01:14:15.308554134Z",
+    "tags": [
+      "gamedev",
+      "computing"
+    ]
+  },
+  "/GameDev/Game-Engine": {
+    "title": "Game Engine",
+    "content": "",
+    "lastmodified": "2023-08-06T01:14:15.304554058Z",
+    "tags": [
+      ""
+    ]
+  },
+  "/GameDev/Game-Loop": {
+    "title": "Game Loop",
+    "content": "The Game Loop defines the individual steps a [[Game Engine|game engine]] executes in order to produce a working game.\n\nThere are three main steps that repeat as the game runs.\n\n```mermaid\ngraph TD\n\n\ta(Input) --\u003e b(Process)\n\t\n\tb --\u003e c(Render)\n\t\n\tc --\u003e a\n ```\n\n## Input\nUser input can come in many forms. The first step of the game loop is typically to recieve input from a player that can then be processed by the engine.\n\nExamples of potential inputs include:\n- Button presses\n- Mouse movement\n- Gyro sensors like a phone tilting\n- Sound activation from a microphone\n\n## Process\nOnce the game engine receives input, it can now process or update the state of the game.\n\nExamples of what can be updated:\n- Object physics\n- Enemy Health\n- Player Experience\n\n## Render\nNow that game state has been updated, the final step is to display the new game state on the screen. After rendering, the game loop returns to the initial state of reading inputs and continues looping until the game terminates.\n\n# Implementations\nThe game loop runs continuously as the driving force of the game engine. In modern computing however, machines come with different specifications that can affect performance in varying ways.\n\nThis performance variation can have an affect on the game loop depending on how fast or slow a machine runs. For example as video games are largely a visual medium, the render step within a gameloop is typically tied closely to the speed at which [[GameDev/Frame|frames]] are rendered. A game with logic tied directly to FPS may have enemies moving faster on a high-end machine compared to a low-end machine.\n\nTo handle this, there are two main methods of implementing a game loop, both with their own benefits and flaws. Deciding on which to use for your game engine depends on the type of game and target hardware being developed for.\n\n## Fixed Time-step\nasdf\n## Variable Time-step\nasdf",
+    "lastmodified": "2023-08-06T01:14:15.304554058Z",
+    "tags": [
+      "gamedev"
+    ]
+  },
+  "/GameDev/Game-Physics": {
+    "title": "Game Physics",
+    "content": "# Movement\n### Speed\nThe rate of change of position over a fixed time-step in any direction.\n\u003eSpeed = Distance / Time\n\n### Acceleration\nThe change of speed over a given time.\n\u003eAcceleration = Δ Speed / Δ Time\n\n### Velocity\nThe speed of an object in a given direction. Denoted as a [[GameDev/Vector|Vector]]. Implementation of velocity in game [[GameDev/Kinematics|Kinematics]] largely depends on the chosen [[GameDev/Game Loop|Game Loop]].\n\n#### [[GameDev/Game Loop#Fixed Time-step|Fixed Time-step]]\nTake the current position of an object and apply a vector to change that position on every [[GameDev/Frame|Frame]].\n\n#### [[GameDev/Game Loop#Variable Time-step|Variable Time-step]]\nTake the current position of an object and apply a vector to change that position. Multiply by vector time.",
+    "lastmodified": "2023-08-06T01:14:15.304554058Z",
+    "tags": [
+      "gamedev",
+      "physics"
+    ]
+  },
+  "/GameDev/Kinematics": {
+    "title": "Kinematics",
+    "content": "A subfield of physics that studies motion without the influence of external forces.\n\n## Vector Reflection\n\u003e **R** = **V** - 2**N**(**V**⋅**N**)\n\u003e Where **V** is the vector and N is the normal vector on the plane\n\n## Gravity Bounce",
+    "lastmodified": "2023-08-06T01:14:15.308554134Z",
+    "tags": [
+      "physics"
+    ]
+  },
+  "/GameDev/Scalar": {
+    "title": "Scalar",
+    "content": "A Scalar has [[GameDev/magnitude|magnitude]]. As opposed to a [[GameDev/Vector|Vector]], scalars only indicate a size, without direction. Scalars can be used to \"scale\" vectors, thereby changing it's magnitude without changing it's the angle of its direction.\n",
+    "lastmodified": "2023-08-06T01:14:15.304554058Z",
+    "tags": [
+      "math",
+      "physics"
+    ]
+  },
+  "/GameDev/Vector": {
+    "title": "Vector",
+    "content": "A vector has [[GameDev/magnitude|magnitude]] and direction. In a 2D plane, this can be represented by a coordinate points. Mathematic notation uses bold or an arrow over the variable to indicate a $\\vec{vector}$ and vertical bars to represent $||\\vec{magnitude}||$ of a vector.\n\n#fix The vector (x,y) has a magnitude and direction relative to coordinate point (0,0).\n```chart\ntype: line\nlabels: [0,4]\nseries:\n  - title: Vector z\n    data: [0,2]\ntension: 0\nwidth: 58%\nlabelColors: false\nfill: false\nbeginAtZero: true\n```\nThe vector **z** (4,3) in the above figure has a direction relative to 0,0. With a magnitude defined by the length. Magnitude can be calculated as:\n $$||\\vec{z}|| = \\sqrt{\\vec{x}^2+\\vec{y}^2}$$\n\u003e [!example] Example\n\u003e $$\n \\begin{aligned}\n ||\\vec{z}|| \u0026= \\sqrt{4^2+3^2} \\\\ \u0026= \\sqrt{25} \\\\ \u0026= 5\n \\end{aligned}\n $$\n\n### Normalized Vector\nA Normalized vector is a vector with the same direction but a magnitude of 1. It is calculated as:\n$$Normal(x) = \\frac{x}{||x||}$$\n\n# Mathematical Operations\nBasic operations can be applied to vectors in order to create new vectors. \nIn all examples, assume the following:\n$\\vec{a} = (2,5)$ and $\\vec{b} = (6,7)$\n\n### Addition\nVector addition adds corresponding indices with each other.\n$$(x_1,y_1)+(x_2,y_2)=(x_1+x_2,y_1+y_2)$$\n\u003e[!example]-\n$\\vec{c} = \\vec{a}+\\vec{b}$\n$\\vec{c} = (2,5) + (6,7)$\n$\\vec{c} = (2+6, 5+7)$\n$\\vec{c} = (8,12)$\n\n### Subtraction\nVector subtraction involves reversing the second vector and then performing addition.\n$$(x_1,y_1)-(x_2,y_2) = (x_1,y_1) + (-x_2,-y_2)$$\n\u003e[!example]-\n$\\vec{c} = (2,5)-(6,7)$\n$\\vec{c} = (2,5)+(-6,-7)$\n$\\vec{c} = (2-6,5-7)$\n$\\vec{c} = (-4,-2)$\n\n## Scaling\nScaling a vector can be achieved by multiplying the vector with a [[GameDev/Scalar|Scalar]].\n$$(x_1,y_1)*||\\vec{z}|| = (x_1*||\\vec{z}||, y_1*||\\vec{z}||)$$\n\u003e[!example]-\n$$\n\\begin{aligned}\n||\\vec{z}|| \u0026= 3\\\\\n\\vec{c} \u0026= \\vec{a} * ||\\vec{z}||\\\\\n\u0026= (2,5) * 3\\\\\n\u0026= (2*3, 5*3)\\\\\n\u0026= (6, 15)\\\\\n\\end{aligned}$$\n\n\n## Dot Product\nThe Dot Product is a method of multiplying two vectors to return a scalar. It can be used to calculate a [[GameDev/Kinematics|reflection angle]] in [[GameDev/2D Space]].\n\nAssume θ as the angle between vectors $\\vec{a}$ and $\\vec{b}$\n$$\\vec{a}·\\vec{b} = ||\\vec{a}|| * ||\\vec{b}|| * cos(θ)$$",
+    "lastmodified": "2023-08-06T04:28:28.228287934Z",
+    "tags": [
+      "math",
+      "physics"
+    ]
+  },
+  "/GameDev/magnitude": {
+    "title": "magnitude",
+    "content": "",
+    "lastmodified": "2023-08-06T01:14:15.304554058Z",
+    "tags": [
+      "math",
+      "physics"
+    ]
+  },
+  "/Hacking/Port": {
+    "title": "Port",
+    "content": "\nA port is a unique numeric identifier assigned to individual access points to direct specific types of computer traffic. Numbered from 0 to 65535, each port can be used for inter-computer communication.",
+    "lastmodified": "2023-08-06T04:20:07.584924428Z",
+    "tags": [
+      "computing"
+    ]
+  },
+  "/Hacking/Port-Enumeration/Port-111-RPC-NFS": {
+    "title": "Port 111 - RPC and NFS",
+    "content": "\n[[Hacking/Port|Port]] 111 is assigned to the Remote Procedure Call (RPC) protocol, which maps services to listening ports.\n# Scanning NFS shares\n\u003e Portmapper \u0026 RPCbind\n\nThese services run on TCP port 111. When a client contacts rpcbind with a particular program number, the rpcbind service redirects the client to the proper port number. Scanning these ports can disclose potential devices to connect with.\nportmapper, rpcbind port 111\nrpcbind shows nfs ports\n\nrpcclient -U \"\" \u003cIP_ADDRESS\u003e\n\u003e enumdomusers\n\u003e querydispinfo",
+    "lastmodified": "2023-08-06T04:17:24.436837234Z",
+    "tags": [
+      "windows",
+      "linux",
+      "networking",
+      "computing"
+    ]
+  },
+  "/Hacking/Port-Enumeration/Port-135-MSRPC": {
+    "title": "Port 135 - MSRPC",
+    "content": "#todo Needs work\n\n`nmap \\-n -v -sV -Pn -p 135 \\--script\\=msrpc-enum \u003cIP\u003e`",
+    "lastmodified": "2023-08-06T04:17:24.436837234Z",
+    "tags": [
+      "windows",
+      "networking",
+      "computing"
+    ]
+  },
+  "/Hacking/Port-Enumeration/Port-139-445-SMB-NetBios": {
+    "title": "Port 139 and 445 - SMB and NetBios",
+    "content": "\n[[Hacking/Port|Ports]] 139 and 445 are assigned to the NetBios and Server Message Block (SMB) protocols respectively.\n# NetBios Service\nPort 139/TCP\nIndependant session layer protocol. allows computers to communicate with eachothers\nNetBios over TCP needed for backwards compatability. Newer SMB doesn't need netbios\n\nScan the netbios service for valid names\n`nbtscan -r \u003cip address\u003e`\n\n# SMB\nPort 445\n\n`crackmapexec smb \u003cIP\u003e -u '' --shares`\n\nList shares\n`smbclient -L \\\\\\\\\u003cIP\u003e`\n\nNmap scripts for SMB\n`nmap --script=\u003cSCRIPT NAME\u003e`\n\nRecursive Get\n`smbclient '\\\\server\\\\share' -N -c 'prompt OFF;recurse ON;cd 'path\\to\\directory\\';lcd '~/path/to/download/to/';mget *'``\n\nAvailable SMB scripts\n```shell-session\n$ ls /usr/share/nmap/scripts/ | grep smb\nsmb2-capabilities.nse\nsmb2-security-mode.nse\nsmb2-time.nse\nsmb2-vuln-uptime.nse\nsmb-brute.nse\nsmb-double-pulsar-backdoor.nse\nsmb-enum-domains.nse\nsmb-enum-groups.nse\nsmb-enum-processes.nse\nsmb-enum-services.nse\nsmb-enum-sessions.nse\nsmb-enum-shares.nse\nsmb-enum-users.nse\nsmb-flood.nse\nsmb-ls.nse\nsmb-mbenum.nse\nsmb-os-discovery.nse\nsmb-print-text.nse\nsmb-protocols.nse\nsmb-psexec.nse\nsmb-security-mode.nse\nsmb-server-stats.nse\nsmb-system-info.nse\nsmb-vuln-conficker.nse\nsmb-vuln-cve2009-3103.nse\nsmb-vuln-cve-2017-7494.nse\nsmb-vuln-ms06-025.nse\nsmb-vuln-ms07-029.nse\nsmb-vuln-ms08-067.nse\nsmb-vuln-ms10-054.nse\nsmb-vuln-ms10-061.nse\nsmb-vuln-ms17-010.nse\nsmb-vuln-regsvc-dos.nse\nsmb-vuln-webexec.nse\nsmb-webexec-exploit.nse\n```",
+    "lastmodified": "2023-08-06T04:17:24.436837234Z",
+    "tags": [
+      "windows",
+      "networking",
+      "SMB",
+      "computing"
+    ]
+  },
+  "/Hacking/Port-Enumeration/Port-161-SNMP": {
+    "title": "Port 161 - Simple Network Management Protocol",
+    "content": "[[Hacking/Port|Port]] 161 is assigned to the Simple Network Management Protocol (SNMP).\n\nSNMP is a UDP based protocol. It may be vulnerable to IP Spoofing or replay attacks. As it is an older protocol there is no traffic encryption. This means credentials and other info may be intercepted. Generally has weak authentication schemes and may be using default credential strings.\n\nUDP scan with nmap for open 161 ports\n`nmap -sU --open -p 161 \u003cIP ADDRESS\u003e`\n\nBruteforce against list of IP\n`onesixtyone`\nNeeds textfiles of community strings\n",
+    "lastmodified": "2023-08-06T04:17:24.436837234Z",
+    "tags": [
+      "windows",
+      "linux",
+      "networking",
+      "computing"
+    ]
+  },
+  "/Hacking/Port-Enumeration/Port-25-SMTP": {
+    "title": "Port 25 - Simple Mail Transfer Protocol",
+    "content": "\n\n\nThis [[Hacking/Port|port]] is assigned to be used with the Simple Mail Sending Protocol.\n\n`nc -nvC \u003cIP ADDRESS\u003e 25`\n`VRFY \u003cUsername\u003e` checks if username exists in mail server\n`EXPD`\n\n```python\nimport socket\nimport sys\nif len(sys.argv) != 3:\n\tprint \"Usage: vrfy.py \u003cIP ADDRESS\u003e \u003cusername\u003e\"\n\tsys.exit(0)\n\n# Create a Socket and connect to the server\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nconnect = s.connect((sys.argv[1],25))\n# Receive the banner\nbanner = s.recv(1024)\nprint(banner)\n\n#VRFY a user\ns.send('VRFY' + sys.argv[2] + '\\r\\n')\nresult = s.recv(1024)\nprint(result)\n\n# close the socket\ns.close()\n```\n\nHow to send a mail\n```\n# Notify which domain is communicating\n\u003e HELO \u003cUSER\u003e@\u003cDOMAIN\u003e\n\u003e MAIL FROM:\u003cSENDER ADDRESS\u003e\n\u003e RCPT TO:\u003cRECIPIENT ADDRESS\u003e\n\u003e DATA\n\u003e Subject: \u003cSubject\u003e\n\u003e From: \u003cSender ADDRESS\u003e\n\u003e\n\u003e \u003cMAIL CONTENTS\u003e\n\u003e\n\u003e.\n```",
+    "lastmodified": "2023-08-06T04:17:24.436837234Z",
+    "tags": [
+      "windows",
+      "linux",
+      "networking",
+      "computing"
+    ]
+  },
+  "/Hacking/Port-Enumeration/Port-80-443-HTTPS": {
+    "title": "Port 111 - RPC and NFS",
+    "content": "\n[[Hacking/Port|Ports]] 80 and 445 are assigned to the Hyper Text Transport Protocol (HTTP) and Hyper Text Transport Protocol Secure (HTTPS) respectively.\n\nWeb enumeration\n\nUse `gobuster` or `ffuf`\n`gobuster dir -u \u003cIP\u003e/\u003cPATH\u003e -w \u003cwordlist\u003e -o \u003cport\u003e.gobust.out `\n`ffuf -w \u003cwordlist\u003e -u http://\u003cIP\u003e/FUZZ -c -recursion -e .html,.txt,.php` - If you need lots of recusion use ffuf",
+    "lastmodified": "2023-08-06T04:17:24.436837234Z",
+    "tags": [
+      "windows",
+      "linux",
+      "networking",
+      "computing",
+      "web"
+    ]
+  },
+  "/Hacking/Port-Scanning": {
+    "title": "Port Scanning",
+    "content": "Port Scanning, also known as Port Knocking, is the process of checking the status of a machine's ports to determine the running services of that machine.\n\n# Nmap\nOne of the most common tools for port scanning is `nmap`.\n## Basic Scanning techniques\n\n### Stealth scan / SYN Scan\nSkips sending final `ACK` packet. By not completing the [[TCP Handshake]], detection by certain firewalls can be minimized as a successful connection was not made. This also has the side benefit of reducing traffic and speeding up the overall scan.\n\n`sudo nmap -sS \u003cIP ADDRESS\u003e`\n\n### TCP Connect scan\nDefault scan when run without sudo privileges. Executes a system call to `connect` with each port, mimicking the behavior most applications use in order to first establish a connection.\n\n`nmap -sT \u003cIP ADDRESS\u003e`\n\n### UDP Scan\nTargets ports that respond to the [[UDP protocol]]. Due to the nature of UDP, this scan type is much slower to execute.\n`sudo nmap -sU \u003cIP ADDRESS\u003e`\n\n## Ping Sweeping\nIn order to conserve network traffic, it can be important to first identify the active machines within a given IP range. To accomplish this, a ping sweep can be run that sends ICMP ping requests to check for a host's response and skips any port scanning.\n`nmap -sn \u003cIP ADDRESS\u003e`\n`nmap -sn 10.11.1.1-254`\n\n\nSimple grep notation bash one liner to check for hosts that are up\n`nmap -sn 10.11.1.1-10 -oG - | cut -d \" \" -f 2 | head --lines=-1 | tail -n +2`\nor to save to a file\n```shell\n$ nmap -sn \u003cIP ADDRESS\u003e -oG ping-sweep.txt\n$ grep Up ping-sweep.txt | cut -d \" \" -f 2 | head\n ```",
+    "lastmodified": "2023-08-06T03:26:17.891407471Z",
+    "tags": [
+      "enumeration",
+      "nmap",
+      "hacking"
+    ]
+  },
+  "/Hacking/Privilege-Escalation/Local-Enumeration": {
+    "title": "Local Enumeration",
+    "content": "# User Enum\n`whoami` - Get Username\n## Windows\n`net user` - Show other users\n`net user \u003cUSERNAME\u003e`  - show detailed \\\u003cUSERNAME\\\u003e information\n`net user \u003cUSERNAME\u003e /domain` - List all domain users\n\n## Linux\n`id` - Get User Identifier(uid) and Group Identifier(gid) of current user\n\n`cat /etc/passwd` - Show all users.\n\n### Hostname Enum\nInfer knowledge based on the hostname. Naming conventions can lead to discovery of other machines (i.e. `host23` potentially indicates `host1-22`). OS name, or purpose of the machine may be revealed (i.e. `mailserver`).\n\n`hostname` - get hostname of machine\n\n# System Architecture\n## Windows\n`systeminfo` - Detailed information on OS and Architecture\n\nTo quickly get only OS name, Version and System Type:\n```\n\u003e systeminfo | findstr /B /C:\"OS Name\" /C:\"OS Version\" /C:\"System Type\"\nOS Name: Microsoft Windows 10 Pro\nOS Version: 10.0.16299 N/A 16299\nSystem Type: x86-based PC\n```\n\n### Hot fixes and Patches\nTake note of potentially un-patched systems. Some older exploits may still work\n`wmic qfe get Caption, Description, HotFixID, InstalledOn`\n\n## Linux\n`cat /etc/*-release` - Output Distribution name and version\n\n```\n$ uname -a\nLinux debian 4.9.0-6-686 #1 SMP Debian 4.9.82-1+deb9u3 (2018-03-02) i686 GNU/Linux\n```\nKernal version is `4.9.0-6-686`. Architecture is `i86`\n\n# Process enumeration\nInvestigating currently running processes may hint towards privilege escalation opportunities. Take note of processes/services that were not exposed during port scans and those running as `root` or other privileged accounts.\n\n## Windows\n`tasklist /SVC` - Returns processes mapped to specific Windows services. (**Does not list processes run by privileged users**)\n\n## Linux\n`ps aux` - Show All processes in User Readable Format with or without a TTY\n\n# Network Information\nIt's necessary to check available network interfaces, routes, and open ports. Target may be connected to multiple networks and can therefore be used as a pivot to those networks. Certain virtual inferfaces may indicate virtualization or AV software. Port bindings can show if a specific service is only available as a loopback address and therefore reachable only from within the machine. Network connections may reveal other users that could serve as potential future targets.\n\n## Windows\n`ipconfig /all` - Display the full TCP/IP configuration of all adapters.\n\n`route print` - Display routing table.\n\n`netstat -ano` - Reveal current active network connections. All tcp connections, Numerical form of address and port, and the Owner of each connection. \n\n## Linux\n`ip a` or `ifconfig a` - Display the full TCP/IP configuration of all adapters.\n\n`route` or `routel` - Display the routing table\n\n`netstat -anp` or `ss -anp` - Display current active network connections. All connections, No hostname resolution, Process names.\n\n# Firewall Status\nFirewall rules are more useful during the remote exploitation phase. Some rules that block outgoing traffic for services may reveal it being accessible via loopback interface. Interacting locally may lead to privilege escalation.\nInbound and outbound port filtering helps facilitate port forwarding and tunneling when pivoting.\n\n## Windows\n`netsh advfirewall show currentprofile` - Show current firewall profile\n`netsh advfirewall firewall show rule name=all` - List firewall rules\n\n## Linux\nListing firewall rules requires `root`\n`etc/iptables` directory lists rules to be restored on system boot. If permissions are weak, users may be able to read the files and disclose firewall rules.\n\n# Scheduled Tasks\nServers may periodically execute automated tasks. When misconfigured, or if insufficient permissions are used, files executed by the scheduler at a higher privilege level could lead to privilege escalation.\n\n## Windows\n`schtasks /query /fo LIST /v` - Displays scheduled tasks. Lists them in a simple format Verbosely.\n\n## Linux\n`ls -lah /etc/cron*` - Lists individual scheduled job tasks.\n`cat /etc/crontab` - If able to be read, may contain specific administrative tasks.\n\n# Installed Applications\nOutside of system exploits, installed applications may lead to privilege escalation. It's important to note the version of each to determine potential vulnerability.\n\n## Windows\n`wmic product get name, version, vendor` - Gets the specified values for applications installed using the windows installer.\n\n## Linux\n#### Debian-based Distributions\n`dpkg -l` - List installed applications (packages)\n#### Red Hat-based Distributions\n`rpm -qa` - List installed applications (packages)\n\n# Readable/Writable Files and Directories\nInsufficient access restrictions can create a vulnerability that an attacker may leverage to escalate privileges. Sensitive files may contain hardcoded credentials for various services.\n\n## Windows\n\n#### accesschk.exe\nA tool used to search the filesystem for files or directories with specific parameters.\n`accesschk.exe \u003cFLAGS\u003e \u003cUSERNAME\u003e \u003cSEARCH DIRECTORY\u003e`\n`accesschk.exe -uws \"Everyone\" \"C:\\Program Files\"` - Browses file system for files with specific parameters. sUppress errors, search for Write permissions, and perform a recursive Search.\n\n#### Powershell\n`Get-Acl` - retrieves permissionf for a given file or directory but cannot be run recursively.\n`Get-ChildItem` - Can be used to enumerate through file system objects.\n`Get-ChildItem \"C:\\Program Files\" -Recurse | Get-ACL | ?{$_.AccessToString -match \"Everyone\\sAllow\\s\\sModify\"}` - Recursive searches in `C:\\Program Files` and passes to `Get-ACL` then filter for the specific properties using the `AccessToString -match` field.\n\n## Linux\n`find` is a powerful command to locate various files with specific properties.\n`find / -writable -type d 2\u003e/dev/null` - Find all writable directories, filter out error output to `/dev/null`\n\n# Unmounted Disks\nFor many systems, drives are automatically mounted at boot time. It's important to always look for unmounted drives and if possible check their mounting permissions.\n\n## Windows\n`mountvol` - used to list all drives that are currently mounted, as well as physically connected but unmounted drives.\n\n## Linux\n`mount` - list all the mounted filesystems.\n`cat /etc/fstab` - Lists the drives that are automatically moutned at boot time.\n`lsblk` - Shows available disks (Potentially some that are connected but not mounted)\n\n# Device Drivers and Kernels Modules\nPrivilege escalation can often be accomplished by expoiting device drivers and kernel modules. It is important to compile a list of the currently loaded kernels modules and drivers.\n\n## Windows\n`driverquery /v /fo csv` - Lists installed drivers with Verbose output in CSV format.\nCan be used in Powershell to pipe for easy filtering.\n```\n\u003e powershell\nPS \u003e driverquery.exe /v /fo csv | ConvertFrom-CSV | Select-Object 'Display Name', 'Start Mode', Path\n```\n\nThis outputs a list of installed drivers, however further enumeration is needed to find version numbers for each driver.\n`Get-WmiObject` can be used to get the `Win32_PnPSignedDriver` WMI instance, which lists signature information for drivers. Piping output to `Select-Object` allows for enumeration of specific information. `Where-Object` can be used to filter for specific drivers.\n`PS \u003e Get-WmiObject Win32_PnPSignedDriver | Select-Object DeviceName, DriverVersion, Manufacturer | Where-Object {$_.DeviceName -like \"*VMWARE*\"}`\n\n## Linux\n`lsmod` - Lists the loaded kernel modules.\n`/sbin/modinfo \u003cMODULE NAME\u003e` - Lists specific information on one module\n\n# Binaries that AutoElevate\nThere exist certain possible shortcuts that may allow for quicker privilege escalation. These should always be checked for.\n\n## Windows\nCheck the `AlwaysInstallELevated` registry setting. If set to `1` in `HKEY_CURRENT_USER` or `HKEY_LOCAL_MACHINE`, any user has permission to run Windows Installer packages with elevated privileges.\n\nQuery these fields using the following:\n```\n\u003e reg query HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Windows\\Installer\nHKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Windows\\InstallerAlwaysInstallElevated    REG_DWORD    0x1\n\n\u003e reg query HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\Installer\nHKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\Windows\\InstallerAlwaysInstallElevated   REG_DWORD    0x1\n```\nIf the setting is enabled, a custom craftred MSI file could be run to grant elevated privileges.\n\n## Linux\nIt is important to check for SUID files. When these files are executed, they are run with the permissions of the file owner. If an SUID file is owned by root, any local use can run that binary with elevated privileges.\n\n`find / -perm -u=s -type f 2\u003e/dev/null` - Finds all files with SUID bit set and filters out error messages.",
+    "lastmodified": "2023-08-07T14:31:27.834936106Z",
+    "tags": [
+      "enumeration",
+      "windows",
+      "linux",
+      "hacking"
+    ]
+  },
+  "/Oscp-experience": {
+    "title": "OSCP Experience",
+    "content": "Recently I completed the Offensive Security Certified Professional exam. It was a very stressful but great learning experience and I wanted to share my thoughts and journey through the exam!\n\nQuick disclaimer, this post leans towards the technical side. Some details may be lost without prior knowledge of cyber-security related [[Hacking/Cyber Security Basic Terms and Concepts|terms and concepts]].\n\n![[Assets/OffSec+Tagline_Full_Color_White_Text.png]]\n\nFor those that don't know, the OSCP exam is a practical exam that challenges examinees to hack into provided machines in order to demonstrate their penetration testing (hacking) skills. \nExaminees have 24 hours to hack as many of the provided machines as possible and an additional 24 hours to write a detailed report about their methodology and findings.\n\nThere are 100 points available to earn while only 70 points are needed to pass. The breakdown is as follows:\n- 3 standalone machines worth 20 points each.\n\t- 10 points for gaining low level access\n\t- 10 points for gaining administrator access\n\n- A set of 3 interconnected (known as [[Hacking/AD/Active Directory|Active Directory]] or AD) machines worth 40 points\n\t- All three need to be completed to earn 40 points\n\t- Only one IP Address is shared, serving as the entry point. The remaining two machines must be reached by 'jumping' from that entry point\n\n\n```mermaid\nflowchart\nA--\u003eB\nA--\u003eC\nA--\u003eD\nA--\u003eE1\nA[My PC]\nsubgraph Test Environment\ndirection LR\nB[Standalone One]--\u003eB2[Low Level User]--\u003eB3[Admin]\nB2-.-\u003eB4{{10 Points}}\nB3-.-\u003eB5{{10 Points}}\nC[Standalone Two]--\u003eC2[Low Level User]--\u003eC3[Admin]\nC2-.-\u003eC4{{10 Points}}\nC3-.-\u003eC5{{10 Points}}\nD[Standalone Three]--\u003eD2[Low Level User]--\u003eD3[Admin]\nD2-.-\u003eD4{{10 Points}}\nD3-.-\u003eD5{{10 Points}}\nE1[AD_1 Entrypoint] --\u003e E2[AD_1 Low Level User]\nE2--\u003e E3[AD_1 Admin]\nE3--\u003eE4[AD_2 Low Level User]\nE4--\u003eE5[AD_2 Admin]\nE5--\u003e E6[AD_Domain_Controller]\nE6-.-\u003eE7{{40 Points}}\nend\n```\n\n\nAs the exam is entirely online, I had the comfort of taking it from home, however the exam is monitored by proctors for the entire 24 hour duration to ensure no cheating or external interference is possible.\n\nThe process began with choosing a starting time. This was actually my second attempt at this certification exam. The first try ended in failure and left me demoralized to make a second attempt for over a year. I struggled a lot with feelings of imposter syndrome but I'm glad I was able to eventually muster up the courage to try again. \nIn that first attempt, I decided to start the exam in the morning at 9am. This ended up being a mistake as at around 2am, some 15 hours of hacking later, I had to make the decision to keep pushing into the night, or rest and accept I wasn't going to earn enough points to clear by the morning.\n\nKeeping my previous attempt in mind, I wanted to give myself enough time after a night's rest in order to make additional progress. I set the exam time for 3PM, giving me an afternoon, evening, and full morning to work.\n\n# Exam time\n\n## Day One\n\n#### Getting into the mindset\n\nOn the day of the exam, I had cereal for breakfast and double-checked that my workstation was prepared. Photo ID, coffee, webcam, more coffee.\nWith that settled, I stretched out on the couch and relaxed a bit. My exam didn't start until the afternoon and I wanted to de-stress as much as possible. There are countless stories of people's experience tackling this exam. One common thread throughout is that the mental pressure can be just as challenging to overcome as the exam itself.\n\n![A glimpse into my mental state](Assets/fine.jpg)\n\nHaving experienced that first-hand in my original attempt, I was going to do my best to not let intruding thoughts of doubt and stress plague my mind. I played some games, read a bit, and watched a lot of youtube.\n\n15 minutes before the exam began, I went through an ID-check process and workstation inspection with the proctor. This involved using my webcam to sweep around the room and under my desk to ensure there were no prohibited items like mobile phones within reach. Once the proctor's checks had concluded, it was time to begin the exam at last.\n\n### The foothold\n\nOnce the exam begins, I'm provided with a list of 4 IP addresses. These addresses correspond to the three standalone machines, and the initial AD machine that I will be targeting for the exam.\n\nThe first order of business is to check what services are running on a system. This practice is commonly known as [[Hacking/Port Scanning|Port Scanning]]. By checking every [[Hacking/Port|port]] to determine which ones are openly allowing traffic, it's possible to understand what services are running on a machine, which is key in order to inform a hacker's method of approach.\n\nMachines with ports 80 and 443 open for example, are most likely web servers designed to serve content to be accessed by users via a web browser. This can be inferred as 80 and 443 are the port numbers reserved for serving HTTP and HTTPS traffic, the two main protocols used for delivering content like websites. From there, I know that I can likely use my web browser to visit the machine and see some kind of website that may have an vulnerability I can leverage in order to exploit the machine.\n\nEstablishing that first foothold on the system by identifying a vulnerability in a service is key towards gaining broader access to a network. In the case of the standalone machines, it often directly leads to low-level access that qualifies for 10 points.\n\n### Roadblocks and Breakthroughs\n\nThe path of a hacker is one of perseverance. The motto of Offensive Security, the company running the OSCP certification, is \"Try Harder\". The mindset asks you to question if you *really* did try absolutely every possible avenue of attack.\n\nThere's some amount of controversy over their motto as it can be interpreted as dismissive or downplaying the efforts people have put into earning their certification and learning to hack. While I agree with some of arguments posed by critics against the Try Harder philosophy, I cannot argue that the type of mentality it encourages is what allowed me to succeed.\n\nLike with many challenges, there are times a hacker will reach a wall halting their progress. Of course, this is an inevitable part of the [[Hacking/Cyber Security Basic Terms and Concepts#Penetration Testing Methodology|penetration testing methodology]]. The starting point and end goal may be known, but it's the steps in between that are often the most unclear. Once I'm able to exploit a machine and get low-level access, what do I do from there? What if I can achieve [[Hacking/Cyber Security Basic Terms and Concepts|remote code execution]], but my payload doesn't spawn a [[Hacking/reverse shell|reverse shell]]? Adopting the Try Harder mentality is about being thorough. For many, this means developing a checklist or using [someone else's](https://book.hacktricks.xyz/). It also means keeping track of what has been done and what is yet to be tried. There's no use in attempting to same command or exploit in hopes that it will magically work after the second or third time.\n\n\u003e The definition of insanity is doing the same thing over and over and expecting different results.\n\nWith the stress and anxiety faced when up against a wall that doesn't seem to break, there is an equal amount of pure joy and enlightenment when the jigsaw piece slides into place and the wall is overcome. A large part of why this profession is so fulfilling is the seesaw of small setbacks and victories, each leading one step closer to total victory over the machine.\n\n### Stuck\n\nFrom my starting time of 3PM, by the time 5:30PM had hit, I was 50 points richer. 40 points earned from gaining Admin privileges on two machines standalone and another 10 points from low privilege access on the third. All I needed was to complete the 3 interconnected AD labs and I would have enough points to pass. \n\nOf course, it wasn't going to be *that* easy.\n\nFor the next few hours, I bashed my head against the initial entry-point of the AD set. While I had found a few potential leads, they all seemed to be dead ends. I went through my checklist once, twice, what felt like a dozen times, but after 5 hours of looking at the same screen with no glimpse of progress, it began to eat away at my mind that time was running out.\n\n![[Assets/coraline-dad.gif|300]]\n\nExaminees are allowed to step away from the computer at any time, for any duration. An allowance I made liberal use of to stretch, grab more food and drink, or rant into the air about what my next steps were. Whether on the verge of a major breakthrough or pounding against the same brick wall, its important to take breaks often. While working on the AD entry-point, I must have stood up over a dozen times to pace the room or just lie down.\n\n### Support\n\nSome opt to take the exam from a hotel room to remove themselves from distractions, or rent out some private space like an AirBnB. As I took the exam from my cozy Kawasaki apartment, I shared the space with my significant other, Sunny (name altered for privacy).\n\nSunny was an endless source of support and optimism throughout the exam and I attribute a major part of my success towards her. Aside from keeping me fed and hydrated with a stream of snacks and drinks, she listened as I constantly bemoaned how I would once again fail because the exam was way too hard and I had gotten nowhere.\n\nHer encouragement to ~~try harder~~ do my best and keep at it, alongside reminding me that there was still plenty of time left in the morning was enough to motivate me to continue. If I just step away and return with a fresh set of eyes and a rested mind, maybe I would find the path forward.\n\nSliding into bed at 11PM after 5 hours of no progress, my mind raced with ideas for what I had yet to try and what I could do differently. It's hard to say if I truly fell asleep that night, there were stretches of lucidity interspersed by hazy thoughts of the exam. My sleeping mind was still awake, dreaming of possible strategies and what would await me in the morning.\n\n\n## Day Two\n### \n\nI woke up not feeling very rested. Regardless, there was work to be done, and checklists to recheck. I slinked back to my desk where my PC, which had been running throughout the night awaited. I greeted the proctor, letting them know I've returned from my extended break and will be resuming the exam. Upon their confirmation, it was time to dive back in.\n\nTime was ticking, but I knew there was no point in rushing. There was nothing to do but be meticulous to ensure I hadn't missed anything.\n\nOf course, I absolutely did miss something.\n\nSomething so glaringly obvious that the relief I felt at making progress was nearly drowned out by my own internal groaning at how I could have made such a silly oversight.",
+    "lastmodified": "2023-08-07T14:17:33.662251262Z",
+    "tags": [
+      "hacking",
+      "blog"
+    ]
+  }
+}
